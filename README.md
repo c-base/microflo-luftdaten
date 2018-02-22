@@ -9,7 +9,7 @@ This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmw
 * SDS011 fine particle sensor
 * DHT22 temperature and humidity sensor
 
-See [luftdaten.info for details](https://luftdaten.info/feinstaubsensor-bauen/)
+See [luftdaten.info for details](https://luftdaten.info/feinstaubsensor-bauen/) and the [wiring plan](https://raw.githubusercontent.com/opendata-stuttgart/meta/master/files/nodemcu-v3-schaltplan-sds011.jpg).
 
 ## Connectivity
 
