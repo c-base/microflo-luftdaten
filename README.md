@@ -21,4 +21,6 @@ Basic idea is to:
 * Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) and visualize using NASA OpenMCT
 * Potentially trigger alerts using custom Python logic
 
+The MsgFlo side of this integration will be in the [c-flo repository](https://github.com/c-base/c-flo).
+
 MQTT connectivity is handled by the [MicroFlo ESP8266 MsgFlo integration](https://github.com/microflo/microflo/pull/143).
