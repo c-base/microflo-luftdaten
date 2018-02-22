@@ -1,16 +1,19 @@
 /* microflo_component yaml
-name: Custom
-description: Custom does whatever you want
+name: HoldPacket
+description: Hold and send latest packet
 inports:
-  in:
+  data:
     type: all
-    description: ""
+    description: "Data to send"
+  in:
+    type: bang
+    description: "Trigger a send"
 outports:
   out:
     type: all
     description: ""
 microflo_component */
-class Custom : public SingleOutputComponent {
+class HoldPacket : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
         if (in.isData()) {
@@ -18,3 +21,5 @@ public:
         }
     }
 };
+
+
