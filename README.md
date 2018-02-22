@@ -11,14 +11,17 @@ This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmw
 
 See [luftdaten.info for details](https://luftdaten.info/feinstaubsensor-bauen/) and the [wiring plan](https://raw.githubusercontent.com/opendata-stuttgart/meta/master/files/nodemcu-v3-schaltplan-sds011.jpg).
 
+
 ## Connectivity
 
-The microcontroller connects to a WiFi network and transmits its information via MQTT. Data logging and processing can be done using [MsgFlo](https://msgflo.org/) components on the message queue.
+The firmware only sensor readout and conditioning on the data, and then transmit it over WiFi/MQTT.
+Data logging and processing can be done using [MsgFlo](https://msgflo.org/) components on the message queue.
 
 Basic idea is to:
 
 * Have a Python component for uploading latest information to luftdaten.info via HTTP API
-* Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) and visualize using NASA OpenMCT
+* Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) 
+* Visualize in OpenMCT dashboards, and with the infoscreens around the station
 * Potentially trigger alerts using custom Python logic
 
 The MsgFlo side of this integration will be in the [c-flo repository](https://github.com/c-base/c-flo).
