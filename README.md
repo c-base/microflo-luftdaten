@@ -20,3 +20,5 @@ Basic idea is to:
 * Have a Python component for uploading latest information to luftdaten.info via HTTP API
 * Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) and visualize using NASA OpenMCT
 * Potentially trigger alerts using custom Python logic
+
+MQTT connectivity is handled by the [MicroFlo ESP8266 MsgFlo integration](https://github.com/microflo/microflo/pull/143).
