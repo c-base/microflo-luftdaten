@@ -1,0 +1,24 @@
+
+OUTPORT=latestTemp.OUT:TEMPERATURE
+OUTPORT=latestHumidity.OUT:HUMIDITY
+OUTPORT=latestFine.OUT:PM25
+OUTPORT=latestCoarse.OUT:PM10
+INPORT=sampleTimer.INTERVAL:SAMPLEINTERVAL
+INPORT=sendTimer.INTERVAL:SENDINTERVAL
+
+'1000' -> INTERVAL sampleTimer(Timer)
+
+sampleTimer -> triggerSample(Split) -> OUT1 dht(ReadDHT22)
+triggerSample OUT2 -> sds(ReadSDS11)
+
+dht TEMPERATURE -> filterTemp(RunningMedian) -> DATA latestTemp(HoldPacket)
+dht HUMIDITY -> filterHumidity(RunningMedian) -> DATA latestHumidity(HoldPacket)
+
+sds PM25 -> filterFine(RunningMedian) -> DATA latestFine(HoldPacket)
+sds PM10 -> filterCoarse(RunningMedian) -> DATA latestCoarse(HoldPacket)
+
+'10000' -> INTERVAL sendTimer(Timer) -> sendSplit(Split)
+sendSplit OUT1 -> latestTemp
+sendSplit OUT2 -> latestHumidity
+sendSplit OUT3 -> latestFine
+sendSplit OUT4 -> latestCoarse
