@@ -1,7 +1,7 @@
 {
-  "name": "microflo-example-arduino",
-  "version": "0.6.0",
-  "description": "Quick start example for MicroFlo on Arduino",
+  "name": "microflo-luftdaten",
+  "version": "0.1.0",
+  "description": "MicroFlo firmware for luftdaten.info air quality sensors",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "microflo generate --components ./node_modules/microflo-core/components --target=arduino graphs/blink.fbp build/blink.ino",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microflo/microflo-example-arduino.git"
+    "url": "git+https://github.com/c-base/microflo-luftdaten.git"
   },
   "keywords": [
     "microflo",
@@ -19,11 +19,11 @@
     "dataflow"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/microflo/microflo-example-arduino/issues"
+    "url": "https://github.com/c-base/microflo-luftdaten/issues"
   },
-  "homepage": "https://github.com/microflo/microflo-example-arduino#readme",
+  "homepage": "https://luftdaten.info/",
   "devDependencies": {
     "microflo": "^0.6.0",
     "microflo-core": "^0.6.0"
