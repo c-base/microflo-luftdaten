@@ -4,8 +4,8 @@
   "description": "MicroFlo firmware for luftdaten.info air quality sensors",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "microflo generate --components ./node_modules/microflo-core/components --target=arduino graphs/blink.fbp build/blink.ino",
-    "start": "microflo runtime --wait-connect 3 --graph graphs/blink.fbp --componentmap build/blink.component.map.json",
+    "generate": "microflo generate --components ./node_modules/microflo-core/components --target=arduino graphs/main.fbp build/main.ino",
+    "start": "microflo runtime --wait-connect 3 --graph graphs/main.fbp --componentmap build/main.component.map.json",
     "build": "`node build.js`"
   },
   "repository": {
