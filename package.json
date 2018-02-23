@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "MicroFlo firmware for luftdaten.info air quality sensors",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "fbp-spec --address ws://localhost:3333 --command 'sh spec/start-runtime.sh' --start-timeout 20 spec/",
     "generate": "microflo generate --components ./node_modules/microflo-core/components --target=arduino graphs/main.fbp build/main.ino",
     "start": "microflo runtime --wait-connect 3 --graph graphs/main.fbp --componentmap build/main.component.map.json",
     "build": "`node build.js`"
@@ -25,6 +25,7 @@
   },
   "homepage": "https://luftdaten.info/",
   "devDependencies": {
+    "fbp-spec": "^0.5.2",
     "microflo": "^0.6.0",
     "microflo-core": "^0.6.0"
   }
