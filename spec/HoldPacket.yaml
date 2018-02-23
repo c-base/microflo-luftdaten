@@ -36,9 +36,9 @@ cases:
       equals: false
 -
   name: 'without receiving data'
-  assertion: 'should send the bang'
+  assertion: 'should send a NULL'
   inputs:
     in: true
   expect:
     out:
-      equals: true
+      type: null
