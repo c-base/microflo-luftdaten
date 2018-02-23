@@ -1,6 +1,8 @@
 microflo-luftdaten [![Build Status](https://travis-ci.org/c-base/microflo-luftdaten.svg?branch=master)](https://travis-ci.org/c-base/microflo-luftdaten)
 ==================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/c-base/microflo-luftdaten.svg)](https://greenkeeper.io/)
+
 This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmware for the [luftdaten.info](https://luftdaten.info/) air quality sensor.
 
 ## Hardware
