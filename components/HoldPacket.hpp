@@ -16,10 +16,13 @@ microflo_component */
 class HoldPacket : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
-        if (in.isData()) {
-            send(in, port);
+        using namespace HoldPacketPorts;
+        if (port == InPorts::data) {
+          data = in;
+        } else if (port == InPorts::in) {
+          send(data, OutPorts::out);
         }
     }
+private:
+    Packet data;
 };
-
-
