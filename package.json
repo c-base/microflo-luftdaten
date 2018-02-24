@@ -27,6 +27,6 @@
   "devDependencies": {
     "fbp-spec": "^0.5.2",
     "microflo": "^0.6.0",
-    "microflo-core": "^0.6.0"
+    "microflo-core": "^0.6.2"
   }
 }
