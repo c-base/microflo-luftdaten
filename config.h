@@ -2,8 +2,6 @@
 #define HAVE_DHT
 #include <DHT.h>
 
-#include "secrets.h"
-
 // #define MICROFLO_MQTT_PREFIX ""
 // #define MICROFLO_MQTT_PORT 1883
 #define MICROFLO_MQTT_HOST  "test.mosquitto.org"
