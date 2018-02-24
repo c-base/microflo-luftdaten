@@ -5,9 +5,6 @@
 #warning "SDS011 support not enabled, you must define HAVE_SDS011"
 #endif
 
-// FIXME: make configurable
-const int RX_PIN = D1;
-const int TX_PIN = D2;
 
 /* microflo_component yaml
 name: ReadSDS011
@@ -28,19 +25,25 @@ microflo_component */
 class ReadSDS011 : public Component {
 private:
     Connection outPorts[ReadSDS011Ports::OutPorts::pm10+1];
+#ifdef HAVE_SDS011
     SoftwareSerial serial;
     SDS011 sds;
+#endif
     bool initialized;
     
 public:
     ReadSDS011()
         : Component(outPorts, ReadSDS011Ports::OutPorts::pm10+1)
-        , serial(RX_PIN, TX_PIN)
+#ifdef HAVE_SDS011
+        , serial(D1, D2)
         , sds(serial)
+#endif
         , initialized(false)
     {
         if (!initialized) {
+#ifdef HAVE_SDS011
             serial.begin(9600);
+#endif
             initialized = true;
         }
     }
