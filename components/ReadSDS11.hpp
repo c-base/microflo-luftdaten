@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: ReadSDS11
 description: Read particle concentration from a SDS011 sensor
+icon: "cloud"
 inports:
   in:
     type: all
