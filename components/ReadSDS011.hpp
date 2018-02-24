@@ -1,11 +1,11 @@
-#ifdef HAVE_SDS11
+#ifdef HAVE_SDS011
 //#include <somelib.h>
 #else
-#warning "SDS11 support not enabled, you must define HAVE_SDS11"
+#warning "SDS011 support not enabled, you must define HAVE_SDS011"
 #endif
 
 /* microflo_component yaml
-name: ReadSDS11
+name: ReadSDS011
 description: Read particle concentration from a SDS011 sensor
 icon: "cloud"
 inports:
@@ -20,22 +20,22 @@ outports:
     type: integer
     description: ""
 microflo_component */
-class ReadSDS11 : public Component {
+class ReadSDS011 : public Component {
 private:
-    Connection outPorts[ReadSDS11Ports::OutPorts::pm10+1];
+    Connection outPorts[ReadSDS011Ports::OutPorts::pm10+1];
 
 public:
-    ReadSDS11()
-        : Component(outPorts, ReadSDS11Ports::OutPorts::pm10+1)
+    ReadSDS011()
+        : Component(outPorts, ReadSDS011Ports::OutPorts::pm10+1)
     {
 
     }
 
     virtual void process(Packet in, MicroFlo::PortId port) {
-        using namespace ReadSDS11Ports;
+        using namespace ReadSDS011Ports;
 
         if (port == InPorts::in) {
-#ifdef HAVE_SDS11
+#ifdef HAVE_SDS011
 
 #else
             send((long)666, OutPorts::pm25);
