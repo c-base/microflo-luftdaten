@@ -6,8 +6,8 @@
 #endif
 
 // FIXME: make configurable
-const int RX_PIN = 11;
-const int TX_PIN = 10;
+const int RX_PIN = D1;
+const int TX_PIN = D2;
 
 /* microflo_component yaml
 name: ReadSDS011
@@ -30,13 +30,19 @@ private:
     Connection outPorts[ReadSDS011Ports::OutPorts::pm10+1];
     SoftwareSerial serial;
     SDS011 sds;
-
+    bool initialized;
+    
 public:
     ReadSDS011()
         : Component(outPorts, ReadSDS011Ports::OutPorts::pm10+1)
         , serial(RX_PIN, TX_PIN)
         , sds(serial)
+        , initialized(false)
     {
+        if (!initialized) {
+            serial.begin(9600);
+            initialized = true;
+        }
     }
 
     virtual void process(Packet in, MicroFlo::PortId port) {
@@ -45,16 +51,14 @@ public:
         if (port == InPorts::in) {
             float pm25 = -999;
             float pm10 = -666;
-            bool error = false;
+            int error = 0;
 #ifdef HAVE_SDS011
-	        serial.begin(9600); // XXX: only do once?
 	        error = sds.read(&pm25, &pm10);
-#else
+#endif
             if (!error) {
                 send((long)(pm25*1000.0), OutPorts::pm25);
                 send((long)(pm10*1000.0), OutPorts::pm10);    
             }
-#endif
         }
     }
 };

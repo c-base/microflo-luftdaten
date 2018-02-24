@@ -10,11 +10,12 @@ This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmw
 ## Hardware
 
 * ESP8266 microcontroller
-* SDS011 fine particle sensor
+* SDS011 fine particle sensor.
 * DHT22 temperature and humidity sensor
 
 See [luftdaten.info for details](https://luftdaten.info/feinstaubsensor-bauen/) and the [wiring plan](https://raw.githubusercontent.com/opendata-stuttgart/meta/master/files/nodemcu-v3-schaltplan-sds011.jpg).
 
+[SDS011 datasheet](http://ecksteinimg.de/Datasheet/SDS011%20laser%20PM2.5%20sensor%20specification-V1.3.pdf)
 
 ## Connectivity
 
