@@ -1,0 +1,10 @@
+topic: ValueToFloat
+cases:
+-
+  name: 'when receiving an integer'
+  assertion: 'should divide and send as float'
+  inputs:
+    in: 2500
+  expect:
+    out:
+      equals: 2.5
