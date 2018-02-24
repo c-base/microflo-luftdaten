@@ -43,7 +43,7 @@ public:
         if (port == InPorts::in) {
             float hum = -23.0;  //Stores humidity value
             float temp = -300.0; //Stores temperature value
-            bool error = true;
+            bool error = false;
 #ifdef HAVE_DHT
             hum = dht.readHumidity();
             temp = dht.readTemperature();
