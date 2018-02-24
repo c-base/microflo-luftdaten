@@ -13,7 +13,7 @@ var cmd = builder + ' -compile ' + ' -verbose' +
     " -hardware " + path.join(arduinoDir, 'hardware') +
     ' -tools ' + path.join(arduinoDir, 'tools-builder') +
     ' -tools ' + path.join(arduinoDir, 'hardware', 'tools') +
-    ' -libraries ' + 'Arduino/libraries/' +
+    ' -libraries ' + path.join(process.env.HOME, 'Arduino', 'libraries') +
     ' -fqbn ' + board +
     ' ' + sketch;
     
