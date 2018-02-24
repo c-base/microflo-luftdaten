@@ -1,3 +1,4 @@
 build/
 node_modules/
 secrets.h
+package-lock.json
