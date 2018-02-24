@@ -14,7 +14,7 @@ class ValueToFloat : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
       using namespace ValueToFloatPorts;
-      if (port == InPorts::in) {
+      if (port == InPorts::in && in.isInteger()) {
         const float val = in.asInteger() / 1000.0;
         send(val, OutPorts::out);
       }
