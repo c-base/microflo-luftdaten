@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: ReadDHT22
 description: Read pressure and humidity from DHT22 sensor
+icon: "thermometer-3"
 inports:
   in:
     type: all
