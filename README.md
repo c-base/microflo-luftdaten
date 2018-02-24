@@ -19,7 +19,7 @@ Data logging and processing can be done using [MsgFlo](https://msgflo.org/) comp
 
 Basic idea is to:
 
-* Have a Python component for uploading latest information to luftdaten.info via HTTP API
+* Have a [Python component for uploading latest information to luftdaten.info](https://github.com/c-base/c-flo/pull/93) via HTTP API
 * Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) 
 * Visualize in OpenMCT dashboards, and with the infoscreens around the station
 * Potentially trigger alerts using custom Python logic
