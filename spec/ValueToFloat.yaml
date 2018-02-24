@@ -1,7 +1,15 @@
 topic: ValueToFloat
 cases:
 -
-  name: 'when receiving an integer'
+  name: 'when receiving 10000'
+  assertion: 'should divide and send as float'
+  inputs:
+    in: 10000
+  expect:
+    out:
+      equals: 10.0
+-
+  name: 'when receiving 2500'
   assertion: 'should divide and send as float'
   inputs:
     in: 2500
