@@ -43,12 +43,16 @@ public:
         if (port == InPorts::in) {
             float hum = -23.0;  //Stores humidity value
             float temp = -300.0; //Stores temperature value
+            bool error = true;
 #ifdef HAVE_DHT
             hum = dht.readHumidity();
             temp = dht.readTemperature();
+            error = isnan(hum) || isnan(temp);
 #endif
-            send((long)(temp*1000.0), OutPorts::temperature);
-            send((long)(hum*1000.0), OutPorts::humidity);
+            if (!error) {
+                send((long)(temp*1000.0), OutPorts::temperature);
+                send((long)(hum*1000.0), OutPorts::humidity);
+            }
             
         }
     }
