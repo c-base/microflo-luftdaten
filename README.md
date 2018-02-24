@@ -3,6 +3,10 @@ microflo-luftdaten [![Build Status](https://travis-ci.org/c-base/microflo-luftda
 
 This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmware for the [luftdaten.info](https://luftdaten.info/) air quality sensor.
 
+![MicroFlo luftdaten graph](https://d2vqpl3tx84ay5.cloudfront.net/800x/microflo-luftdaten-graph.png)
+
+**[Open in Flowhub](http://app.flowhub.io/#github/c-base/microflo-luftdaten)**
+
 ## Hardware
 
 * ESP8266 microcontroller
@@ -20,7 +24,7 @@ Data logging and processing can be done using [MsgFlo](https://msgflo.org/) comp
 Basic idea is to:
 
 * Have a [Python component for uploading latest information to luftdaten.info](https://github.com/c-base/c-flo/pull/93) via HTTP API
-* Store air quality information in InfluxDB using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) 
+* [Store air quality information in InfluxDB](https://github.com/c-base/cbeam-telemetry-server/pull/61) using [cbeam-telemetry-server](https://github.com/c-base/cbeam-telemetry-server) 
 * Visualize in OpenMCT dashboards, and with the infoscreens around the station
 * Potentially trigger alerts using custom Python logic
 
