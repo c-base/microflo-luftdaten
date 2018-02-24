@@ -3,6 +3,8 @@ microflo-luftdaten [![Build Status](https://travis-ci.org/c-base/microflo-luftda
 
 This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmware for the [luftdaten.info](https://luftdaten.info/) air quality sensor.
 
+![MicroFlo luftdaten graph](https://d2vqpl3tx84ay5.cloudfront.net/800x/microflo-luftdaten-graph.png)
+
 ## Hardware
 
 * ESP8266 microcontroller
