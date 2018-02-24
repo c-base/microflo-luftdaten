@@ -3,6 +3,7 @@ cases:
 -
   name: 'when receiving 10000'
   assertion: 'should divide and send as float'
+  skip: 'serialized to 0.0 always by microflo'
   inputs:
     in: 10000
   expect:
@@ -11,6 +12,7 @@ cases:
 -
   name: 'when receiving 2500'
   assertion: 'should divide and send as float'
+  skip: 'serialized to 0.0 always by microflo'
   inputs:
     in: 2500
   expect:
