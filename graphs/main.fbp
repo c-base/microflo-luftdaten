@@ -11,11 +11,11 @@ INPORT=sendTimer.INTERVAL:SENDINTERVAL
 sampleTimer -> triggerSample(Split) OUT1 -> dht(ReadDHT22)
 triggerSample OUT2 -> sds(ReadSDS11)
 
-dht TEMPERATURE -> filterTemp(RunningMedian) -> DATA latestTemp(HoldPacket)
-dht HUMIDITY -> filterHumidity(RunningMedian) -> DATA latestHumidity(HoldPacket)
+dht TEMPERATURE -> filterTemp(RunningMedian) -> (ValueToFloat) -> DATA latestTemp(HoldPacket)
+dht HUMIDITY -> filterHumidity(RunningMedian) -> (ValueToFloat) -> DATA latestHumidity(HoldPacket)
 
-sds PM25 -> filterFine(RunningMedian) -> DATA latestFine(HoldPacket)
-sds PM10 -> filterCoarse(RunningMedian) -> DATA latestCoarse(HoldPacket)
+sds PM25 -> filterFine(RunningMedian) -> (ValueToFloat) -> DATA latestFine(HoldPacket)
+sds PM10 -> filterCoarse(RunningMedian) -> (ValueToFloat) -> DATA latestCoarse(HoldPacket)
 
 '10000' -> INTERVAL sendTimer(Timer) -> sendSplit(Split)
 sendSplit OUT1 -> latestTemp
