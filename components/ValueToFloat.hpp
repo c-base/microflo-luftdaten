@@ -15,7 +15,8 @@ public:
     virtual void process(Packet in, MicroFlo::PortId port) {
       using namespace ValueToFloatPorts;
       if (port == InPorts::in) {
-        send(in.asInteger() / 1000.0, OutPorts::out);
+        const float val = in.asInteger() / 1000.0;
+        send(val, OutPorts::out);
       }
     }
 };
