@@ -6,6 +6,8 @@ dist: trusty
 before_install:
 - wget -O arduino.tgz https://downloads.arduino.cc/arduino-1.8.1-linux64.tar.xz
 - tar -xf arduino.tgz
+- arduino-1.8.1/arduino --install-library "Adafruit Unified Sensor":1.0.2
+- arduino-1.8.1/arduino --install-library "DHT sensor library":1.3.0
 script:
 - npm run generate
 - ARDUINO=`pwd`/arduino-1.8.1 npm run build

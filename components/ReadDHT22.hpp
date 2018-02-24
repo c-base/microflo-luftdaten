@@ -17,6 +17,8 @@ microflo_component */
 
 #ifdef HAVE_DHT
 #include <DHT.h>;
+#else
+#warning "DHT library not enabled, you must #define HAVE_DHT"
 #endif
 
 //Constants
