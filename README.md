@@ -5,6 +5,8 @@ This repository aims to provide a [MicroFlo](http://microflo.org/) powered firmw
 
 ![MicroFlo luftdaten graph](https://d2vqpl3tx84ay5.cloudfront.net/800x/microflo-luftdaten-graph.png)
 
+**[Open in Flowhub](http://app.flowhub.io/#github/c-base/microflo-luftdaten)**
+
 ## Hardware
 
 * ESP8266 microcontroller
