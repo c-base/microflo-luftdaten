@@ -5,6 +5,14 @@
 #warning "SDS011 support not enabled, you must define HAVE_SDS011"
 #endif
 
+#ifndef D1
+#warning "D1 pin not defined. This only works on a ESP8266 target"
+#define D1 98
+#endif
+#ifndef D2
+#warning "D2 pin not defined. This only works on a ESP8266 target"
+#define D2 99
+#endif
 
 /* microflo_component yaml
 name: ReadSDS011
