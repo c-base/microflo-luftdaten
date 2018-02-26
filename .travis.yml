@@ -8,8 +8,9 @@ before_install:
 - tar -xf arduino.tgz
 - arduino-1.8.1/arduino --install-library "Adafruit Unified Sensor":1.0.2
 - arduino-1.8.1/arduino --install-library "DHT sensor library":1.3.0
-- git clone https://github.com/plerup/espsoftwareserial Arduino/libraries/espsoftwareserial
-- git clone https://github.com/sensebox/SDS011-select-serial.git Arduino/libraries/SDS011-select-serial
+- ls
+- git clone https://github.com/plerup/espsoftwareserial ~/Arduino/libraries/espsoftwareserial
+- git clone https://github.com/sensebox/SDS011-select-serial.git ~/Arduino/libraries/SDS011-select-serial
 - cp secrets.example.h ./secrets.h
 script:
 - MICROFLO_TARGET=arduino npm run generate
