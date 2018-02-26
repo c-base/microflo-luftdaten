@@ -21,6 +21,11 @@ microflo_component */
 #warning "DHT library not enabled, you must #define HAVE_DHT"
 #endif
 
+#ifndef D7
+#warning "D7 pin not defined. This only works on a ESP8266 target"
+#define D7 97
+#endif
+
 //Constants
 class ReadDHT22 : public Component {
 private:
